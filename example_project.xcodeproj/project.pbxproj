@@ -12,6 +12,7 @@
 		964AC490229772610059D5B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964AC48E229772610059D5B5 /* Main.storyboard */; };
 		964AC492229772650059D5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 964AC491229772650059D5B5 /* Assets.xcassets */; };
 		964AC495229772650059D5B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964AC493229772650059D5B5 /* LaunchScreen.storyboard */; };
+		964AC49D229774F40059D5B5 /* EricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964AC49C229774F40059D5B5 /* EricTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		964AC491229772650059D5B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		964AC494229772650059D5B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		964AC496229772650059D5B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		964AC49C229774F40059D5B5 /* EricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EricTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				964AC48A229772610059D5B5 /* AppDelegate.swift */,
 				964AC48C229772610059D5B5 /* ViewController.swift */,
 				964AC48E229772610059D5B5 /* Main.storyboard */,
+				964AC49C229774F40059D5B5 /* EricTableViewCell.swift */,
 				964AC491229772650059D5B5 /* Assets.xcassets */,
 				964AC493229772650059D5B5 /* LaunchScreen.storyboard */,
 				964AC496229772650059D5B5 /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				964AC48D229772610059D5B5 /* ViewController.swift in Sources */,
 				964AC48B229772610059D5B5 /* AppDelegate.swift in Sources */,
+				964AC49D229774F40059D5B5 /* EricTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
