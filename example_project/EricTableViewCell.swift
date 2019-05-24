@@ -20,5 +20,5 @@ class EricTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+//eric was here
 }
