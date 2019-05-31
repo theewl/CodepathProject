@@ -65,6 +65,7 @@
                             <constraint firstItem="KmQ-Tr-TxV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="A9u-lw-vWx"/>
                             <constraint firstItem="sCh-c3-efv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="MHa-AN-Cmg"/>
                             <constraint firstItem="jZS-hz-jez" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="MOj-hR-bKH"/>
+                            <constraint firstItem="jP6-87-8Ug" firstAttribute="centerY" secondItem="tT8-tg-5yN" secondAttribute="centerY" id="MP8-uL-DfV"/>
                             <constraint firstItem="jZS-hz-jez" firstAttribute="top" secondItem="sCh-c3-efv" secondAttribute="bottom" constant="20" id="YK6-05-mXz"/>
                             <constraint firstItem="EfM-KI-iTM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="eBe-Ow-j74"/>
                             <constraint firstItem="tT8-tg-5yN" firstAttribute="top" secondItem="jZS-hz-jez" secondAttribute="bottom" constant="70" id="mg0-iZ-chR"/>
@@ -80,6 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="665" y="99"/>
         </scene>
         <!--All Courses-->
         <scene sceneID="PZQ-Cz-kZb">
@@ -711,6 +713,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rvs-MK-bLf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yvJ-KA-Tot">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
