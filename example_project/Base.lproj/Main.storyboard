@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rvs-MK-bLf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,7 +86,7 @@
         <!--All Courses-->
         <scene sceneID="PZQ-Cz-kZb">
             <objects>
-                <viewController id="mT5-Hn-aG8" sceneMemberID="viewController">
+                <viewController id="mT5-Hn-aG8" customClass="CourseViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fot-v0-ODl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,10 +96,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="skS-8p-gfS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="108" id="skS-8p-gfS" customClass="CourseCell" customModule="example_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="skS-8p-gfS" id="tb5-8x-yad">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="skS-8p-gfS" id="tb5-8x-yad" customClass="CourseCell" customModule="example_project" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -109,27 +109,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBH-YJ-I8g">
-                                                    <rect key="frame" x="337" y="18.5" width="24" height="70.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="FW1-8d-ciR"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="7p2-RJ-qxD" secondAttribute="bottom" constant="8" id="B4k-GX-r4b"/>
                                                 <constraint firstItem="7p2-RJ-qxD" firstAttribute="centerY" secondItem="tb5-8x-yad" secondAttribute="centerY" id="Enp-aO-pVd"/>
                                                 <constraint firstItem="7p2-RJ-qxD" firstAttribute="leading" secondItem="tb5-8x-yad" secondAttribute="leading" constant="16" id="Mk3-Ob-SuN"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="yBH-YJ-I8g" secondAttribute="trailing" constant="-1" id="YoF-0l-12s"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="yBH-YJ-I8g" secondAttribute="bottom" constant="8" id="qYr-bQ-O5L"/>
-                                                <constraint firstItem="yBH-YJ-I8g" firstAttribute="centerY" secondItem="tb5-8x-yad" secondAttribute="centerY" id="xmk-gK-jgK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="courseName" destination="7p2-RJ-qxD" id="3zP-Vo-wVW"/>
                                             <segue destination="Ykl-bj-8BH" kind="show" id="PSm-zR-emO"/>
                                         </connections>
                                     </tableViewCell>
@@ -147,15 +136,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="klA-X7-xQA" id="ufE-es-sSW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kw1-2l-XZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="717.60000000000002" y="1901.1994002998501"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Course View Controller-->
         <scene sceneID="4th-vO-je6">
             <objects>
-                <viewController id="pjg-Gs-AlM" sceneMemberID="viewController">
+                <viewController id="pjg-Gs-AlM" customClass="AddCourseViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vbf-pa-sn5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,7 +157,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="6nc-jn-HcJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addCourseCell" rowHeight="108" id="6nc-jn-HcJ" customClass="addCourseCell" customModule="example_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6nc-jn-HcJ" id="N1W-R8-Djf">
@@ -180,6 +172,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqk-6s-SZF">
                                                     <rect key="frame" x="310" y="38.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="isDisplayedSwitch:" destination="6nc-jn-HcJ" eventType="valueChanged" id="seu-5R-rdK"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -191,6 +186,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="courseName" destination="Esk-Nn-bjb" id="a8n-Wh-XKh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -198,6 +196,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JqO-Jj-d3j"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="eFN-TV-GiU" id="lPv-2S-RnD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKa-4Q-9ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
