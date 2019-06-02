@@ -10,6 +10,8 @@ import UIKit
 
 class CourseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
+    //let list = []
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return 10
