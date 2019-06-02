@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import Parse
 
 class AddCourseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
+    var courses = [PFObject]()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 10
+        return courses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addCourseCell") as! addCourseCell
-        
-        cell.courseName.text = "CS 141"
+        let course = courses[indexPath.row]
+    
+        cell.courseName.text = course["name"] as? String
         
         return cell
     }
@@ -36,6 +40,21 @@ class AddCourseViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.delegate = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        let query = PFQuery(className: "courseNames" )
+        
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil
+            {
+                self.courses = posts!
+                self.tableView.reloadData()
+            }
+        }
     }
     
 
