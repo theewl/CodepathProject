@@ -11,10 +11,16 @@ import Parse
 
 class ViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
     //Hello this is Farid
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var passWord: UITextField!
     
+
     @IBAction func onSignIn(_ sender: Any) {
         let username = userName.text!
         let password = passWord.text!
@@ -28,7 +34,7 @@ class ViewController: UIViewController {
             
         }
     }
-
+    
     @IBAction func onSignUp(_ sender: Any) {
         let user = PFUser()
         user.username = userName.text
@@ -43,13 +49,10 @@ class ViewController: UIViewController {
             }
             
         }
-
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+
+    
 
 
 }
