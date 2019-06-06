@@ -12,6 +12,7 @@ import Parse
 class AddCourseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     var courses = [PFObject]()
+    var userCourses = [PFObject]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -47,7 +48,6 @@ class AddCourseViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidAppear(animated)
         
         let query = PFQuery(className: "courseNames" )
-        
         query.findObjectsInBackground { (posts, error) in
             if posts != nil
             {

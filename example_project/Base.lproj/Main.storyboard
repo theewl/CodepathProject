@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginPage" id="BYZ-38-t0r" customClass="ViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,7 +94,7 @@
         <!--All Courses-->
         <scene sceneID="PZQ-Cz-kZb">
             <objects>
-                <viewController storyboardIdentifier="FeedNavigationController" id="mT5-Hn-aG8" customClass="CourseViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mT5-Hn-aG8" customClass="CourseViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fot-v0-ODl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,11 @@
                         <viewLayoutGuide key="safeArea" id="DxL-nD-phr"/>
                     </view>
                     <navigationItem key="navigationItem" title="All Courses" id="Lcl-Wg-99t">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="gAt-Hq-Bi8"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="gAt-Hq-Bi8">
+                            <connections>
+                                <action selector="onLogout:" destination="mT5-Hn-aG8" id="tVd-Cf-zxB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="OGn-oP-2jG">
                             <connections>
                                 <segue destination="pjg-Gs-AlM" kind="show" id="Vwj-oX-Dy6"/>
@@ -199,6 +203,7 @@
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="courseName" destination="Esk-Nn-bjb" id="a8n-Wh-XKh"/>
+                                            <outlet property="courseSelected" destination="Fqk-6s-SZF" id="LNZ-dK-UmF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -722,7 +727,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="zKc-Sy-2P3">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rvs-MK-bLf" customClass="tabBarController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="rvs-MK-bLf" customClass="tabBarController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yvJ-KA-Tot">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
