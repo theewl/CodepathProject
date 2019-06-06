@@ -14,6 +14,7 @@ class addCourseCell: UITableViewCell {
     
     @IBOutlet weak var courseName: UILabel!
     
+    @IBOutlet weak var courseSelected: UISwitch!
     @IBAction func isDisplayedSwitch(_ sender: Any)
     {
         
