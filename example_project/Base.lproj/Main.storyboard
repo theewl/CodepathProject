@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rvs-MK-bLf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,7 +48,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DMR-yh-ayf"/>
+                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KnO-xz-qzf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jP6-87-8Ug">
@@ -57,7 +57,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rai-OX-DaM"/>
+                                    <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xvq-AN-c2h"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -83,8 +83,6 @@
                     </view>
                     <connections>
                         <outlet property="passWord" destination="jZS-hz-jez" id="xPg-Xc-yXk"/>
-                        <outlet property="signInButton" destination="tT8-tg-5yN" id="o8v-aE-jyG"/>
-                        <outlet property="signUpButton" destination="jP6-87-8Ug" id="0hZ-qb-wIv"/>
                         <outlet property="userName" destination="EfM-KI-iTM" id="l9k-JE-z3P"/>
                         <segue destination="rvs-MK-bLf" kind="presentation" identifier="loginSegue" id="PEg-Mh-bU0"/>
                     </connections>
@@ -96,7 +94,7 @@
         <!--All Courses-->
         <scene sceneID="PZQ-Cz-kZb">
             <objects>
-                <viewController id="mT5-Hn-aG8" customClass="CourseViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedNavigationController" id="mT5-Hn-aG8" customClass="CourseViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fot-v0-ODl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
