@@ -64,25 +64,28 @@ class CourseViewController: UIViewController, UITableViewDataSource, UITableView
         userCourses.removeAll()
         var courses = [PFObject]()
         
-        courses = user["courses"] as! [PFObject]
-        
-        if courses != [] {
-            for course in courses{
-                let query = PFQuery(className: "courseNames")
-                query.whereKey("objectId", equalTo: course.objectId!)
-                
-                query.findObjectsInBackground { (course, error) in
-                    if error != nil
-                    {
-                        print(error!.localizedDescription)
-                    } else {
-                        let course = course![0]
-                        self.userCourses.append(course)
-                        self.tableView.reloadData()
+        if user["courses"] != nil {
+            courses = user["courses"] as! [PFObject]
+            
+            if courses != [] {
+                for course in courses{
+                    let query = PFQuery(className: "courseNames")
+                    query.whereKey("objectId", equalTo: course.objectId!)
+                    
+                    query.findObjectsInBackground { (course, error) in
+                        if error != nil
+                        {
+                            print(error!.localizedDescription)
+                        } else {
+                            let course = course![0]
+                            self.userCourses.append(course)
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
         }
+        
     }
     
     var sending_course: PFObject?

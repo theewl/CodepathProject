@@ -31,18 +31,15 @@ class AddCourseViewController: UIViewController, UITableViewDataSource, UITableV
         cell.courseName.text = course["name"] as? String
         cell.course = (course as? PFObject)!
         cell.backgroundColor = bgColors[indexPath.row % 3]
-        
+        cell.courseSelected.isOn = false
         for temp in userCourses{
             
             if temp["name"] as! String == course["name"] as! String{
                 cell.courseSelected.isOn = true
                 break
             }
-            else{
-                cell.courseSelected.isOn = false
-
-            }
         }
+        
 
         return cell
     }
@@ -64,30 +61,32 @@ class AddCourseViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        
+        userCourses.removeAll()
         var courses = [PFObject]()
         
-        courses = user["courses"] as! [PFObject]
-        
-        if courses != [] {
-            for course in courses{
-                let query = PFQuery(className: "courseNames")
-                query.whereKey("objectId", equalTo: course.objectId!)
-                
-                query.findObjectsInBackground { (course, error) in
-                    if error != nil
-                    {
-                       print(error!.localizedDescription)
-                    } else {
-                        let course = course![0]
-                        self.userCourses.append(course)
-//                        print(course)
-//                        print(self.userCourses.contains(course))
-                        self.tableView.reloadData()
+        if user["courses"] != nil {
+            courses = user["courses"] as! [PFObject]
+            if courses != [] {
+                for course in courses{
+                    let query = PFQuery(className: "courseNames")
+                    query.whereKey("objectId", equalTo: course.objectId!)
+                    
+                    query.findObjectsInBackground { (course, error) in
+                        if error != nil
+                        {
+                            print(error!.localizedDescription)
+                        } else {
+                            let course = course![0]
+                            self.userCourses.append(course)
+                            //print(course)
+                            //                        print(self.userCourses.contains(course))
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
         }
+        
 
         let query2 = PFQuery(className: "courseNames" )
         
