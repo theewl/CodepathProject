@@ -11,21 +11,39 @@ import Parse
 
 class AddCourseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    var courses = [PFObject]()
+    let user = PFUser.current()!
+    var allCourses = [PFObject]()
     var userCourses = [PFObject]()
+    let bgColors = [UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255, alpha: 1),
+                    UIColor(displayP3Red: 110/255, green: 110/255, blue: 110/255, alpha: 1),
+                    UIColor(displayP3Red: 135/255, green: 135/255, blue: 135/255, alpha: 1)] as [UIColor]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return courses.count
+        return allCourses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addCourseCell") as! addCourseCell
-        let course = courses[indexPath.row]
+        let course = allCourses[indexPath.row]
     
         cell.courseName.text = course["name"] as? String
+        cell.course = (course as? PFObject)!
+        cell.backgroundColor = bgColors[indexPath.row % 3]
         
+        for temp in userCourses{
+            
+            if temp["name"] as! String == course["name"] as! String{
+                cell.courseSelected.isOn = true
+                break
+            }
+            else{
+                cell.courseSelected.isOn = false
+
+            }
+        }
+
         return cell
     }
     
@@ -47,16 +65,59 @@ class AddCourseViewController: UIViewController, UITableViewDataSource, UITableV
     {
         super.viewDidAppear(animated)
         
-        let query = PFQuery(className: "courseNames" )
-        query.findObjectsInBackground { (posts, error) in
+        var courses = [PFObject]()
+        
+        courses = user["courses"] as! [PFObject]
+        
+        if courses != [] {
+            for course in courses{
+                let query = PFQuery(className: "courseNames")
+                query.whereKey("objectId", equalTo: course.objectId!)
+                
+                query.findObjectsInBackground { (course, error) in
+                    if error != nil
+                    {
+                       print(error!.localizedDescription)
+                    } else {
+                        let course = course![0]
+                        self.userCourses.append(course)
+//                        print(course)
+//                        print(self.userCourses.contains(course))
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+
+        let query2 = PFQuery(className: "courseNames" )
+        
+        query2.findObjectsInBackground { (posts, error) in
             if posts != nil
             {
-                self.courses = posts!
+                self.allCourses = posts!
                 self.tableView.reloadData()
             }
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        var selectedCourses = [PFObject]()
+        let cells = tableView.visibleCells as! [addCourseCell]
+        for cell in cells {
+            if cell.courseSelected.isOn {
+                selectedCourses.append(cell.course!)
+            }
+        }
+        user["courses"] = selectedCourses
+        user.saveInBackground { (success, error) in
+            if success {
+                print("saved")
+            }
+            else {
+                print(error)
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
