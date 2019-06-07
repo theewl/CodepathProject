@@ -93,13 +93,13 @@
 		964AC489229772610059D5B5 /* example_project */ = {
 			isa = PBXGroup;
 			children = (
-				964A4EE622A20768003D3E92 /* CourseCell.swift */,
 				964AC48A229772610059D5B5 /* AppDelegate.swift */,
 				964AC48C229772610059D5B5 /* ViewController.swift */,
 				04EEC21D22A10EFB00A3FA9B /* Main.storyboard */,
 				964AC491229772650059D5B5 /* Assets.xcassets */,
 				964AC493229772650059D5B5 /* LaunchScreen.storyboard */,
 				964AC496229772650059D5B5 /* Info.plist */,
+				964A4EE622A20768003D3E92 /* CourseCell.swift */,
 				964A4EE222A2040A003D3E92 /* CourseViewController.swift */,
 				964A4EE822A20A51003D3E92 /* AddCourseViewController.swift */,
 				964A4EEA22A20B09003D3E92 /* addCourseCell.swift */,
