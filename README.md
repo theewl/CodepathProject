@@ -41,8 +41,7 @@ zotCourse is an app which provides a integrated platform for UCI students (curre
 * Display all imported activities to user.
 * Allow user to add self-defined activities into to-do-list.
 * Setting page.
-* Colorful user interface.
-sharing
+* Colorful user interface
 
 ### 2. Screen Archetypes
 
