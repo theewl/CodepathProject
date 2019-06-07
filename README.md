@@ -68,7 +68,6 @@ sharing
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
-
 * Courses
 * ToDo List
 
@@ -82,7 +81,7 @@ sharing
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="Wireframe.JPG" width=600>
+<img src="https://drive.google.com/file/d/14jXK3_yOVx43yG2beQKdIMtoQfVV7UqL/view?usp=sharing" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
