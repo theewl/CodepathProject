@@ -23,24 +23,24 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
         
         var comments = [PFObject]()
-        comments = course?["comments"] as! [PFObject]
-        
-        if comments != [] {
-            for comment in comments{
-                let query = PFQuery(className: "Comment")
-                query.includeKey("author")
-                query.whereKey("objectId", equalTo: comment.objectId!)
-                
-                query.findObjectsInBackground { (comment, error) in
-                    if error != nil
-                    {
-                        print(error!.localizedDescription)
-                    } else {
-                        let comment = comment![0]
-                        self.courseComments.append(comment)
-                        //                        print(course)
-                        //                        print(self.userCourses.contains(course))
-                        self.tableView.reloadData()
+        if (course != nil) && (course?["comments"] != nil) {
+            comments = course?["comments"] as! [PFObject]
+            
+            if comments != [] {
+                for comment in comments{
+                    let query = PFQuery(className: "Comment")
+                    query.includeKey("author")
+                    query.whereKey("objectId", equalTo: comment.objectId!)
+                    
+                    query.findObjectsInBackground { (comment, error) in
+                        if error != nil
+                        {
+                            print(error!.localizedDescription)
+                        } else {
+                            let comment = comment![0]
+                            self.courseComments.append(comment)
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
