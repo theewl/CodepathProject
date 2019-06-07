@@ -46,7 +46,6 @@ class AddCourseViewController: UIViewController, UITableViewDataSource, UITableV
     
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addCourseCell: addCourseCell!
     
     override func viewDidLoad()
     {
@@ -99,24 +98,19 @@ class AddCourseViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        var selectedCourses = [PFObject]()
-        let cells = tableView.visibleCells as! [addCourseCell]
-        for cell in cells {
-            if cell.courseSelected.isOn {
-                selectedCourses.append(cell.course!)
-            }
-        }
-        user["courses"] = selectedCourses
-        user.saveInBackground { (success, error) in
-            if success {
-                print("saved")
-            }
-            else {
-                print(error)
-            }
-        }
-    }
+
+    
+//    override func viewDidDisappear(_ animated: Bool) {
+//        user["courses"] = userCourses
+//        user.saveInBackground { (success, error) in
+//            if success {
+//                print("saved")
+//            }
+//            else {
+//                print(error)
+//            }
+//        }
+//    }
 
     /*
     // MARK: - Navigation

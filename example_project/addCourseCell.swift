@@ -17,4 +17,14 @@ class addCourseCell: UITableViewCell {
     
     @IBOutlet weak var courseSelected: UISwitch!
     var course: PFObject?
+    
+    @IBAction func onSwitch(_ sender: Any) {
+        let user = PFUser.current()
+        if courseSelected.isOn {
+            user?.add(course, forKey: "courses")
+        }
+        else {
+            user?.remove(course, forKey: "courses")
+        }
+    }
 }

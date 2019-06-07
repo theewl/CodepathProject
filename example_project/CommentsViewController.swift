@@ -23,7 +23,6 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(courseComments)
         return courseComments.count
     }
     
@@ -38,6 +37,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        courseComments.removeAll()
         var comments = [PFObject]()
         if (course != nil) && (course?["comments"] != nil) {
             comments = course?["comments"] as! [PFObject]
@@ -64,6 +64,12 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddCommentView" {
+            let vc = segue.destination as! AddCommentViewController
+            vc.course = course
+        }
+    }
    
     /*
     // MARK: - Navigation

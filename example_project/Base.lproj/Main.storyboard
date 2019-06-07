@@ -187,6 +187,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqk-6s-SZF">
                                                     <rect key="frame" x="310" y="38.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="onSwitch:" destination="6nc-jn-HcJ" eventType="valueChanged" id="pcV-gb-lrX"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -356,7 +359,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="vkx-N5-al5" kind="show" id="Ow0-Cv-GMp"/>
+                                    <segue destination="vkx-N5-al5" kind="show" identifier="toAddCommentView" id="Ow0-Cv-GMp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,31 +380,37 @@
             </objects>
             <point key="canvasLocation" x="1257" y="3674"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Comment View Controller-->
         <scene sceneID="Gv0-77-JRu">
             <objects>
-                <viewController id="vkx-N5-al5" sceneMemberID="viewController">
+                <viewController id="vkx-N5-al5" customClass="AddCommentViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6mq-PX-FOw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nIL-Jv-ULE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6R7-su-Qf6">
-                                <rect key="frame" x="148" y="361" width="38" height="34"/>
+                                <rect key="frame" x="168" y="288" width="38" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="onPost:" destination="vkx-N5-al5" eventType="touchUpInside" id="r8b-aJ-fwm"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a comment here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nIL-Jv-ULE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="193"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WRm-h8-7I8"/>
                     </view>
+                    <connections>
+                        <outlet property="userIpt" destination="nIL-Jv-ULE" id="gEF-HA-Eb3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gb-Mg-MpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
