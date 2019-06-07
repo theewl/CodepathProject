@@ -151,7 +151,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="courseCell" destination="tb5-8x-yad" id="qt0-Cz-LDt"/>
                         <outlet property="tableView" destination="klA-X7-xQA" id="ufE-es-sSW"/>
                         <segue destination="Ykl-bj-8BH" kind="show" identifier="toDetailsView" id="oyV-c7-0i9"/>
                     </connections>

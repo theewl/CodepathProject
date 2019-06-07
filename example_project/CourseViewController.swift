@@ -34,7 +34,6 @@ class CourseViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
-    @IBOutlet weak var courseCell: UITableViewCell!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidAppear(_ animated: Bool) {
