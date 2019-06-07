@@ -80,7 +80,7 @@ zotCourse is an app which provides a integrated platform for UCI students (curre
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://ibb.co/QC61c0G/Wireframe.jpg" width=600>
+<img src="https://i.ibb.co/QC61c0G/Wireframe.jpg" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
