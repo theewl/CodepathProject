@@ -42,7 +42,7 @@ zotCourse is an app which provides a integrated platform for UCI students (curre
 * Allow user to add self-defined activities into to-do-list.
 * Setting page.
 * Colorful user interface.
-
+sharing
 
 ### 2. Screen Archetypes
 
@@ -82,7 +82,7 @@ zotCourse is an app which provides a integrated platform for UCI students (curre
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://drive.google.com/file/d/14jXK3_yOVx43yG2beQKdIMtoQfVV7UqL/view?usp=sharing" width=600>
+<img src="Wireframe.JPG" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
