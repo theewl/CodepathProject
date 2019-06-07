@@ -1,4 +1,4 @@
-Group Project - README Template
+Group Project - README
 ===
 
 # zotCourse
@@ -11,11 +11,12 @@ Group Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+zotCourse is an app which provides a integrated platform for UCI students (currently) to find course-related information through their iPhones. It offers useful features like subscribing class updates, making comments to a course, and creating user-based customized todo-lists.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:**
+
 - **Mobile:**
 - **Story:**
 - **Market:**
