@@ -21,7 +21,10 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        courseComments.removeAll()
         var comments = [PFObject]()
         if (course != nil) && (course?["comments"] != nil) {
             comments = course?["comments"] as! [PFObject]
@@ -94,6 +97,14 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
                 commentNum -= 1;
             }
             return cell
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCommentsView" {
+            let vc = segue.destination as! CommentsViewController
+            vc.course = course
         }
     }
     

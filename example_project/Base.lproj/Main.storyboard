@@ -291,10 +291,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="3674.2128935532237"/>
         </scene>
-        <!--View Controller-->
+        <!--Comments View Controller-->
         <scene sceneID="rF0-nx-GHh">
             <objects>
-                <viewController id="J6G-AG-r0H" sceneMemberID="viewController">
+                <viewController id="J6G-AG-r0H" customClass="CommentsViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ds-Hg-Twg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,7 +314,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="Lwy-qP-vlW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="56" id="Lwy-qP-vlW" customClass="CommentCell" customModule="example_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lwy-qP-vlW" id="Rlc-C3-8wa">
@@ -344,21 +344,68 @@
                                                 <constraint firstItem="oHT-Mp-vvP" firstAttribute="top" secondItem="Rlc-C3-8wa" secondAttribute="top" constant="8" id="t7f-dS-JDn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentText" destination="oHT-Mp-vvP" id="IS2-UO-aDk"/>
+                                            <outlet property="userName" destination="X1E-D2-jPP" id="xCq-26-xRC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOo-0l-L6b">
+                                <rect key="frame" x="329" y="74" width="30" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <segue destination="vkx-N5-al5" kind="show" id="Ow0-Cv-GMp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Xwk-Vf-nsw" firstAttribute="top" secondItem="DTG-kN-Kif" secondAttribute="top" constant="16" id="EA2-hG-8E4"/>
+                            <constraint firstItem="DTG-kN-Kif" firstAttribute="trailing" secondItem="IOo-0l-L6b" secondAttribute="trailing" constant="16" id="Mpr-Jn-RhC"/>
+                            <constraint firstItem="IOo-0l-L6b" firstAttribute="centerY" secondItem="Xwk-Vf-nsw" secondAttribute="centerY" id="aQG-Yj-c4r"/>
                             <constraint firstItem="Xwk-Vf-nsw" firstAttribute="leading" secondItem="DTG-kN-Kif" secondAttribute="leading" constant="16" id="hAz-zp-TN4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DTG-kN-Kif"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Lcq-MY-7wG" id="wbQ-Sz-4QF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BhR-cs-ea9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1257" y="3674"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Gv0-77-JRu">
+            <objects>
+                <viewController id="vkx-N5-al5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6mq-PX-FOw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6R7-su-Qf6">
+                                <rect key="frame" x="148" y="361" width="38" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Post"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add a comment here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nIL-Jv-ULE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WRm-h8-7I8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gb-Mg-MpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2112.8000000000002" y="3672.4137931034484"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="EAu-sd-LtE">
@@ -629,7 +676,7 @@
                                             <outlet property="user1" destination="5XV-2Q-Sp3" id="KIi-Gs-e6v"/>
                                             <outlet property="user2" destination="yeh-fe-9pz" id="D4k-qD-YB6"/>
                                             <outlet property="user3" destination="dVL-Yi-cil" id="Oxa-Il-XFx"/>
-                                            <segue destination="J6G-AG-r0H" kind="show" id="lid-ze-1y6"/>
+                                            <segue destination="J6G-AG-r0H" kind="show" identifier="toCommentsView" id="lid-ze-1y6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
