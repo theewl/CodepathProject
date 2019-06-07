@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class addCourseCell: UITableViewCell {
 
@@ -15,20 +16,5 @@ class addCourseCell: UITableViewCell {
     @IBOutlet weak var courseName: UILabel!
     
     @IBOutlet weak var courseSelected: UISwitch!
-    @IBAction func isDisplayedSwitch(_ sender: Any)
-    {
-        
-    }
-    override func awakeFromNib()
-    {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    var course: PFObject?
 }

@@ -18,6 +18,10 @@
 		964AC492229772650059D5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 964AC491229772650059D5B5 /* Assets.xcassets */; };
 		964AC495229772650059D5B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964AC493229772650059D5B5 /* LaunchScreen.storyboard */; };
 		D68B4020BD44893C3BF1FAFA /* Pods_example_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B569CB1B7C285F5F8B8729 /* Pods_example_project.framework */; };
+		E4F678ED22AA37C600E27A7A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F678EC22AA37C600E27A7A /* DetailsViewController.swift */; };
+		E4F678F122AA553100E27A7A /* detailsViewTimeLocCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F678F022AA553100E27A7A /* detailsViewTimeLocCell.swift */; };
+		E4F678F322AA554C00E27A7A /* detailsViewActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F678F222AA554C00E27A7A /* detailsViewActivityCell.swift */; };
+		E4F678F522AA556900E27A7A /* detailsViewCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F678F422AA556900E27A7A /* detailsViewCommentsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		964AC491229772650059D5B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		964AC494229772650059D5B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		964AC496229772650059D5B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F678EC22AA37C600E27A7A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		E4F678F022AA553100E27A7A /* detailsViewTimeLocCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewTimeLocCell.swift; sourceTree = "<group>"; };
+		E4F678F222AA554C00E27A7A /* detailsViewActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewActivityCell.swift; sourceTree = "<group>"; };
+		E4F678F422AA556900E27A7A /* detailsViewCommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewCommentsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +97,11 @@
 				964A4EE222A2040A003D3E92 /* CourseViewController.swift */,
 				964A4EE822A20A51003D3E92 /* AddCourseViewController.swift */,
 				964A4EEA22A20B09003D3E92 /* addCourseCell.swift */,
+				E4F678EC22AA37C600E27A7A /* DetailsViewController.swift */,
 				572368DB22A48F05008E0870 /* tabBarController.swift */,
+				E4F678F022AA553100E27A7A /* detailsViewTimeLocCell.swift */,
+				E4F678F222AA554C00E27A7A /* detailsViewActivityCell.swift */,
+				E4F678F422AA556900E27A7A /* detailsViewCommentsCell.swift */,
 			);
 			path = example_project;
 			sourceTree = "<group>";
@@ -232,9 +244,13 @@
 				964A4EEB22A20B09003D3E92 /* addCourseCell.swift in Sources */,
 				964A4EE722A20768003D3E92 /* CourseCell.swift in Sources */,
 				964AC48D229772610059D5B5 /* ViewController.swift in Sources */,
+				E4F678ED22AA37C600E27A7A /* DetailsViewController.swift in Sources */,
+				E4F678F322AA554C00E27A7A /* detailsViewActivityCell.swift in Sources */,
 				572368DC22A48F05008E0870 /* tabBarController.swift in Sources */,
 				964A4EE922A20A51003D3E92 /* AddCourseViewController.swift in Sources */,
+				E4F678F122AA553100E27A7A /* detailsViewTimeLocCell.swift in Sources */,
 				964AC48B229772610059D5B5 /* AppDelegate.swift in Sources */,
+				E4F678F522AA556900E27A7A /* detailsViewCommentsCell.swift in Sources */,
 				964A4EE322A2040A003D3E92 /* CourseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

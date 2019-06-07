@@ -11,18 +11,24 @@ import Parse
 
 class CourseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    //let list = []
+
+    let user = PFUser.current()!
+    var userCourses = [PFObject]()
+    let bgColors = [UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255, alpha: 1),
+                    UIColor(displayP3Red: 110/255, green: 110/255, blue: 110/255, alpha: 1),
+                    UIColor(displayP3Red: 135/255, green: 135/255, blue: 135/255, alpha: 1)] as [UIColor]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 10
+        return userCourses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell") as! CourseCell
-        
-        cell.courseName.text = "CS 141"
+        let course = userCourses[indexPath.row]
+        cell.courseName.text = course["name"] as! String
+        cell.backgroundColor = bgColors[indexPath.row % 3]
         
         return cell
     }
@@ -31,7 +37,9 @@ class CourseViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var courseCell: UITableViewCell!
     @IBOutlet weak var tableView: UITableView!
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        loadCourseData()
+    }
     
     override func viewDidLoad()
     {
@@ -51,6 +59,47 @@ class CourseViewController: UIViewController, UITableViewDataSource, UITableView
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.window?.rootViewController = loginViewController
     }
+    
+    func loadCourseData() {
+        userCourses.removeAll()
+        var courses = [PFObject]()
+        
+        courses = user["courses"] as! [PFObject]
+        
+        if courses != [] {
+            for course in courses{
+                let query = PFQuery(className: "courseNames")
+                query.whereKey("objectId", equalTo: course.objectId!)
+                
+                query.findObjectsInBackground { (course, error) in
+                    if error != nil
+                    {
+                        print(error!.localizedDescription)
+                    } else {
+                        let course = course![0]
+                        self.userCourses.append(course)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    var sending_course: PFObject?
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        sending_course = userCourses[indexPath.row]
+        performSegue(withIdentifier: "toDetailsView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsView" {
+            let vc = segue.destination as! DetailsViewController
+            vc.course = sending_course
+        }
+    }
+    
+
     
     /*
     // MARK: - Navigation
