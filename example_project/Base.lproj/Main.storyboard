@@ -373,7 +373,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="132" id="HfA-Jt-pKz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsViewTimeLocCell" rowHeight="132" id="HfA-Jt-pKz" userLabel="TimeLocCell" customClass="detailsViewTimeLocCell" customModule="example_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HfA-Jt-pKz" id="niS-fZ-Pht">
@@ -445,8 +445,14 @@
                                                 <constraint firstItem="8Hb-tA-QJk" firstAttribute="leading" secondItem="niS-fZ-Pht" secondAttribute="leading" constant="16" id="yCQ-bN-Dnv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="disTimeLoc" destination="3lZ-HE-uYs" id="prj-Vl-OAG"/>
+                                            <outlet property="labTimeLoc" destination="fcx-fB-W4I" id="XLJ-HD-D1f"/>
+                                            <outlet property="lecTimeLoc" destination="IHz-gH-3lI" id="eDS-uZ-mg6"/>
+                                            <outlet property="title" destination="o3G-wi-UF8" id="JEo-ja-cqc"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="129" id="wbs-bW-I71">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsViewActivityCell" rowHeight="129" id="wbs-bW-I71" userLabel="ActivityCell" customClass="detailsViewActivityCell" customModule="example_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="375" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wbs-bW-I71" id="PcW-Wn-oY2">
@@ -527,10 +533,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="Deadline1" destination="fbj-3Z-M2N" id="KsB-Oq-A1g"/>
+                                            <outlet property="Deadline2" destination="QxM-QR-QmY" id="8SZ-kh-UW0"/>
+                                            <outlet property="Deadline3" destination="Y15-ku-PEp" id="poV-HD-XuS"/>
+                                            <outlet property="activity1" destination="5Mx-Q3-AxW" id="8Ar-qb-Fha"/>
+                                            <outlet property="activity2" destination="IOJ-pB-rqE" id="RSB-bs-mhb"/>
+                                            <outlet property="activity3" destination="j1A-Ji-wxN" id="y2S-uc-3tK"/>
                                             <segue destination="zLa-NC-vre" kind="show" id="agD-eF-4sg"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="kw1-Ue-xjM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsViewCommentsCell" rowHeight="130" id="kw1-Ue-xjM" userLabel="CommentsCell" customClass="detailsViewCommentsCell" customModule="example_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="289" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kw1-Ue-xjM" id="ySc-tb-0qj">
@@ -611,6 +623,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="comment1" destination="Ik0-TX-pAj" id="4SS-hU-k08"/>
+                                            <outlet property="comment2" destination="ATO-BG-wh5" id="Fzl-hf-e27"/>
+                                            <outlet property="comment3" destination="Rp4-zw-Gun" id="BSK-Hv-uUp"/>
+                                            <outlet property="user1" destination="5XV-2Q-Sp3" id="KIi-Gs-e6v"/>
+                                            <outlet property="user2" destination="yeh-fe-9pz" id="D4k-qD-YB6"/>
+                                            <outlet property="user3" destination="dVL-Yi-cil" id="Oxa-Il-XFx"/>
                                             <segue destination="J6G-AG-r0H" kind="show" id="lid-ze-1y6"/>
                                         </connections>
                                     </tableViewCell>
@@ -620,6 +638,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="R8Y-xG-Yux"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Ulg-3i-8Uo" id="I16-ao-D6i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGO-z0-9Iv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
