@@ -46,7 +46,6 @@ class AddCourseViewController: UIViewController, UITableViewDataSource, UITableV
     
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addCourseCell: addCourseCell!
     
     override func viewDidLoad()
     {
