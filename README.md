@@ -94,7 +94,34 @@ zotCourse is an app which provides a integrated platform for UCI students (curre
    | coursesAdded | Array of Course | array of all courses subscribed by the user |
    | eventsAdded  | Array of Event | array of all event added by the user |
    
+#### Course
+
+   | Property | Type   | Description |
+   | -------- | ------ | ----------- |
+   | name     | String | course name |
+   | lecTime  | String | lecture gathering time (E.g. "TuTh 02:00-03:20pm") |
+   | lecPos   | String | lecture gathering room (E.g. "ALP 1200") |
+   | disTime  | String | discussion gathering time |
+   | disPos   | String | discussion gathering room |
+   | labTime  | String | lab gathering time |
+   | labPos   | String | lab gathering room |
+   | events   | Array of Event | array of all event related to the course |
+   | comments | Array of Comment | array of all comments under the course |
    
+#### Event
+
+   | Propoerty | Type   | Description |
+   | --------- | ------ | ----------- |
+   | title     | String | event title |
+   | due       | String | event deadline (E.g. "11:59pm Jun02") |
+   
+#### Comment
+
+   | Property | Type   | Description |
+   | -------- | ------ | ----------- |
+   | course   | Pointer to Course | identify which course this comment belongs to |
+   | text     | String | comment text |
+   | author   | Pointer to User | identify which user wrote this comment |  
 
 ### Networking
 - [Add list of network requests by screen ]
