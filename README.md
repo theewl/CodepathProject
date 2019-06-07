@@ -20,7 +20,7 @@ zotCourse is an app which provides a integrated platform for UCI students (curre
 - **Story:** Allows user to add courses and activities into their own list. Present corresponding info for every course, and welcome user to contribute their own opinion toward the platform.
 - **Market:** Currently UCI students, would expand to all college students if applicable. "Made for student" is always the main idea for this app.
 - **Habit:** We wish this app could be a must-have to college students, for it is simple but detailed, and would satisfy the real needs of students.
-- **Scope:** Starting from part of courses selected by our team, we would try to cover every courses available in this school, with precise anWireframe.jpgd well organized content presenting to users.
+- **Scope:** Starting from part of courses selected by our team, we would try to cover every courses available in this school, with precise and well organized content presenting to users.
 
 ## Product Spec
 
@@ -79,13 +79,23 @@ zotCourse is an app which provides a integrated platform for UCI students (curre
 * CourseDetailView -> CommentView
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
 <img src="https://i.imgur.com/JCTy1N1.jpg" width=800>
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### User
+
+   | Property     | Type   | Description |
+   | ------------ | ------ | ----------- |
+   | username     | String | user's unique username |
+   | password     | String | user's password |
+   | createdAt    | Date   | Date that the object has been updated |
+   | updatedAt    | Date   | Date that the object has been updated |
+   | coursesAdded | Array of Course | array of all courses subscribed by the user |
+   | eventsAdded  | Array of Event | array of all event added by the user |
+   
+   
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
