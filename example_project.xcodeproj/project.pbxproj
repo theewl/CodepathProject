@@ -21,6 +21,8 @@
 		E4B589E222AAFC57004EDB33 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B589E122AAFC57004EDB33 /* CommentsViewController.swift */; };
 		E4B589E422AB0002004EDB33 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B589E322AB0002004EDB33 /* CommentCell.swift */; };
 		E4B589E622AB0A5F004EDB33 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B589E522AB0A5F004EDB33 /* AddCommentViewController.swift */; };
+		E4B589E822AB3403004EDB33 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B589E722AB3403004EDB33 /* ToDoViewController.swift */; };
+		E4B589EA22AB342F004EDB33 /* eventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B589E922AB342F004EDB33 /* eventCell.swift */; };
 		E4F678ED22AA37C600E27A7A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F678EC22AA37C600E27A7A /* DetailsViewController.swift */; };
 		E4F678F122AA553100E27A7A /* detailsViewTimeLocCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F678F022AA553100E27A7A /* detailsViewTimeLocCell.swift */; };
 		E4F678F322AA554C00E27A7A /* detailsViewActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F678F222AA554C00E27A7A /* detailsViewActivityCell.swift */; };
@@ -46,6 +48,8 @@
 		E4B589E122AAFC57004EDB33 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		E4B589E322AB0002004EDB33 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		E4B589E522AB0A5F004EDB33 /* AddCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
+		E4B589E722AB3403004EDB33 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		E4B589E922AB342F004EDB33 /* eventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventCell.swift; sourceTree = "<group>"; };
 		E4F678EC22AA37C600E27A7A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E4F678F022AA553100E27A7A /* detailsViewTimeLocCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewTimeLocCell.swift; sourceTree = "<group>"; };
 		E4F678F222AA554C00E27A7A /* detailsViewActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewActivityCell.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				E4B589E122AAFC57004EDB33 /* CommentsViewController.swift */,
 				E4B589E322AB0002004EDB33 /* CommentCell.swift */,
 				E4B589E522AB0A5F004EDB33 /* AddCommentViewController.swift */,
+				E4B589E722AB3403004EDB33 /* ToDoViewController.swift */,
+				E4B589E922AB342F004EDB33 /* eventCell.swift */,
 			);
 			path = example_project;
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 				964A4EE922A20A51003D3E92 /* AddCourseViewController.swift in Sources */,
 				E4F678F122AA553100E27A7A /* detailsViewTimeLocCell.swift in Sources */,
 				E4B589E222AAFC57004EDB33 /* CommentsViewController.swift in Sources */,
+				E4B589E822AB3403004EDB33 /* ToDoViewController.swift in Sources */,
 				964AC48B229772610059D5B5 /* AppDelegate.swift in Sources */,
+				E4B589EA22AB342F004EDB33 /* eventCell.swift in Sources */,
 				E4F678F522AA556900E27A7A /* detailsViewCommentsCell.swift in Sources */,
 				E4B589E622AB0A5F004EDB33 /* AddCommentViewController.swift in Sources */,
 				964A4EE322A2040A003D3E92 /* CourseViewController.swift in Sources */,

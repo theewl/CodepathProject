@@ -705,7 +705,7 @@
         <!--ToDo List-->
         <scene sceneID="2mr-2t-ttM">
             <objects>
-                <viewController id="ENq-F6-qUP" sceneMemberID="viewController">
+                <viewController id="ENq-F6-qUP" customClass="ToDoViewController" customModule="example_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ihe-Uk-fZM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -715,7 +715,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="Lq3-5A-Ebh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="73" id="Lq3-5A-Ebh" customClass="eventCell" customModule="example_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lq3-5A-Ebh" id="hph-UX-oUh">
@@ -744,6 +744,10 @@
                                                 <constraint firstItem="vRy-9h-eap" firstAttribute="top" secondItem="hph-UX-oUh" secondAttribute="top" constant="8" id="uPT-qH-ZMv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deadline" destination="2ok-Jh-dpA" id="MsC-tY-Ulu"/>
+                                            <outlet property="title" destination="vRy-9h-eap" id="7OU-TC-Sjj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -755,6 +759,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="yHh-0C-teX"/>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="Zx2-i5-ZEW"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Bei-Oa-kU1" id="hIT-hI-0nh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zr-g1-INa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
