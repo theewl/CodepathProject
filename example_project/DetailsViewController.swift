@@ -58,7 +58,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
                 
                 if events != [] {
                     for event in events{
-                        //print(event.objectId)
                         let query = PFQuery(className: "Event")
                         query.includeKeys(["title", "due"])
                         query.whereKey("objectId", equalTo: event.objectId!)
@@ -70,7 +69,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
                             } else {
                                 let event = event![0]
                                 self.courseEvents.append(event)
-                                print(self.courseEvents)
                                 self.tableView.reloadData()
                             }
                         }
@@ -81,7 +79,6 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(courseEvents)
         return 3
     }
     
@@ -96,8 +93,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailsViewActivityCell") as! detailsViewActivityCell
-            var eventNum = courseEvents.count
-            
+            let eventNum = courseEvents.count
             if eventNum >= 3 {
                 cell.activity1.text = courseEvents[0]["title"] as? String
                 cell.Deadline1.text = courseEvents[0]["due"] as? String
@@ -110,13 +106,14 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
             } else if eventNum == 2 {
                 cell.activity1.text = courseEvents[0]["title"] as? String
                 cell.Deadline1.text = courseEvents[0]["due"] as? String
-                
+               
                 cell.activity2.text = courseEvents[1]["title"] as? String
                 cell.Deadline2.text = courseEvents[1]["due"] as? String
                 
                 cell.activity3.text = ""
                 cell.Deadline3.text = ""
-            } else if eventNum == 1 {
+            }
+            else if eventNum == 1 {
                 cell.activity1.text = courseEvents[0]["title"] as? String
                 cell.Deadline1.text = courseEvents[0]["due"] as? String
                 
@@ -126,7 +123,16 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
                 cell.activity3.text = ""
                 cell.Deadline3.text = ""
             }
-            
+            else {
+                cell.activity1.text = ""
+                cell.Deadline1.text = ""
+                
+                cell.activity2.text = ""
+                cell.Deadline2.text = ""
+                
+                cell.activity3.text = ""
+                cell.Deadline3.text = ""
+            }
             return cell
         }
         else {
@@ -149,7 +155,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
             } else if commentNum == 2 {
                 user = (courseComments[0]["author"] as? PFUser)!
                 cell.user2.text = user["username"] as? String
-                cell.comment2.text = courseComments[1]["text"] as? String
+                cell.comment2.text = courseComments[0]["text"] as? String
                 
                 user = (courseComments[1]["author"] as? PFUser)!
                 cell.user2.text = user["username"] as? String
@@ -158,10 +164,10 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
                 cell.user3.text = ""
                 cell.comment3.text = ""
             }
-            if commentNum == 1 {
+            else if commentNum == 1 {
                 user = (courseComments[0]["author"] as? PFUser)!
                 cell.user2.text = user["username"] as? String
-                cell.comment2.text = courseComments[1]["text"] as? String
+                cell.comment2.text = courseComments[0]["text"] as? String
                 
                 cell.user2.text = ""
                 cell.comment2.text = ""

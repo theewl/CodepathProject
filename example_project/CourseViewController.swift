@@ -46,6 +46,7 @@ class CourseViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 65
 
         // Do any additional setup after loading the view.
     }
